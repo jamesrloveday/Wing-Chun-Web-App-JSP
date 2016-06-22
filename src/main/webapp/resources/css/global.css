@@ -1,0 +1,13 @@
+.loginBox {
+    border: 1px solid black;
+    align-content: right;
+    margin-right: 25cm;
+}
+
+body{
+    background-image: url(../images/mwcImage.PNG); 
+    background-repeat: no-repeat; 
+    background-size: 20cm, 20cm;
+    background-position: center; 
+    background-attachment: fixed;
+}
