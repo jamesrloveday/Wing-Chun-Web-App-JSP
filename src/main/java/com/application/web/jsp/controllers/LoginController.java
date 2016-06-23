@@ -32,15 +32,15 @@ public class LoginController {
 
     @RequestMapping(value = "login")
     public String getLoginPage(Model model) {
-        User user = new User(); 
-        model.addAttribute("user", user); 
         return "login";
     }
     
     @RequestMapping(value = "home", params = {"loginUser"})
-    public String loginUser(@ModelAttribute("user") User user, Model model) {
+    public String loginUser(@RequestParam("username") String username,
+            @RequestParam("password") String password, Model model) {
+        User user = new User(username, password); 
         final boolean loggedIn = loginService.loginUser(user);
-            if(true) return "home";  
+            if(loggedIn) return "/home";  
             else return "redirect:login";
     }
 

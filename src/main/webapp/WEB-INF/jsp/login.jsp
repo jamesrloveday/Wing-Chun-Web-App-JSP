@@ -1,6 +1,4 @@
 <!DOCTYPE html>
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%> 
 <html>
 <head>
     <link rel="stylesheet" type="text/css" media="all" href="/resources/css/global.css"/>
@@ -11,12 +9,12 @@
 <h3>Please login to access the wiki</h3>
 
 <div class="loginBox" >
-    <form:form id="loginForm" action="/wingchun/home" method="post" commandName="user">
-        <p>Username: <form:input path="username" type="text" id="username" value="${user.username}" size="30"/></p>
-        <p>Password:<form:input path="password" type="password" id="password" value="${user.password}" size="25"/></p>
+    <form id="loginForm" action="/wingchun/home" method="post">
+        <p>Username: <input name="username" type="text" id="username" value="" size="30"/></p>
+        <p>Password:<input name="password" type="password" id="password" value="" size="25"/></p>
         <br/>
         <input type="submit" name="loginUser" value="Login"/>&nbsp;<input type="reset" value="cancel"/>
-    </form:form>
+    </form>
 </div>
 <br />
 <br />
