@@ -4,9 +4,13 @@ import com.application.web.jsp.service.LoginService;
 import com.application.web.jsp.transferObjects.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.ModelAndView;
 
 /**
  * Created by james on 13/06/2016.
@@ -14,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * Login controller class to return the login page and to handle login requests from the user.
  */
 @Controller
-@RequestMapping("/")
+@RequestMapping("/wingchun")
 public class LoginController {
 
     private LoginService loginService;
@@ -26,17 +30,18 @@ public class LoginController {
         this.loginService = loginService;
     }
 
-    @RequestMapping(value = "/login")
-    public String getLoginPage() {
+    @RequestMapping(value = "login")
+    public String getLoginPage(Model model) {
+        User user = new User(); 
+        model.addAttribute("user", user); 
         return "login";
     }
-
-    @RequestMapping(value = "/home", method = RequestMethod.GET)
-    public String loginUser(@RequestParam("username") String username,
-                            @RequestParam("password") String password) {
-        final User user = new User(username, password);
+    
+    @RequestMapping(value = "home", params = {"loginUser"})
+    public String loginUser(@ModelAttribute("user") User user, Model model) {
         final boolean loggedIn = loginService.loginUser(user);
-            if(loggedIn) return "home";  
+            if(true) return "home";  
             else return "redirect:login";
     }
+
 }

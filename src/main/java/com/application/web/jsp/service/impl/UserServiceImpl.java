@@ -47,7 +47,7 @@ public class UserServiceImpl implements UserService {
                         .stream().filter(
                         u -> u.username.equals(username)
                                 && u.password.equals(password))
-                        .findAny().get(); 
+                        .findAny().orElse(new User()); 
     }
 
 }

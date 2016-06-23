@@ -23,8 +23,9 @@ public class LoginServiceImpl implements LoginService, FieldValidator {
     @Override
     public boolean loginUser(User user) {
         if(this.isNotNull(user.username) && this.isNotNull(user.password)) {
-            if((userService.findUser(user.username, user.password) != null)) {
-                return !userService.findUser(user.username, user.password).clubLocation.isEmpty();
+            User testableUser = userService.findUser(user.username, user.password); 
+            if((testableUser.id != null)) {
+                return true ;
             } else {
                 return false;
             }
