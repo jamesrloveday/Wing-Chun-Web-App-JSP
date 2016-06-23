@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
  * Login controller class to return the login page and to handle login requests from the user.
  */
 @Controller
+@RequestMapping("/")
 public class LoginController {
 
     private LoginService loginService;
@@ -25,7 +26,7 @@ public class LoginController {
         this.loginService = loginService;
     }
 
-    @RequestMapping("/")
+    @RequestMapping(value = "/login")
     public String getLoginPage() {
         return "login";
     }

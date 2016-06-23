@@ -14,9 +14,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
  * @author James Loveday
  */
 @Controller
+@RequestMapping("/register")
 public class RegisterUserController {
     
-    @RequestMapping(value = "/registerNewUserPage", method = RequestMethod.GET) 
+    @RequestMapping(value = "/newUserPage", method = RequestMethod.GET) 
     public String getRegisterNewUserPage() {
         return "register"; 
     }

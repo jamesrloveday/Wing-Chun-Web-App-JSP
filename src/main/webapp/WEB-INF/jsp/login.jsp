@@ -20,7 +20,7 @@
 <br />
 
 <div id="registerPageId">
-    <a href="/registerNewUserPage">Register New User</a>
+    <a href="/register/newUserPage">Register New User</a>
 
 </div>
 
