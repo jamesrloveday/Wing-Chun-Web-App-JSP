@@ -55,9 +55,4 @@ public class RegisterUserController implements FieldValidator {
         return navigateToNextPage; 
     }
     
-    @RequestMapping(value = "/register/termsAndConditions", method = RequestMethod.GET) 
-    public String getTsAndCsPage() {
-        return "termsAndConditionsPage"; 
-    }
-    
 }
