@@ -30,7 +30,7 @@ public class LoginController {
         this.loginService = loginService;
     }
 
-    @RequestMapping(value = "login")
+    @RequestMapping(value = {"login", "/logout"})
     public String getLoginPage(Model model) {
         return "login";
     }
@@ -43,5 +43,4 @@ public class LoginController {
             if(loggedIn) return "/home";  
             else return "redirect:login";
     }
-
 }

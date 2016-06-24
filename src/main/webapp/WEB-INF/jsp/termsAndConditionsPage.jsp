@@ -9,9 +9,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <title>Wing chun wiki T's And C's</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>This is the terms and conditions page</h1>
     </body>
 </html>
