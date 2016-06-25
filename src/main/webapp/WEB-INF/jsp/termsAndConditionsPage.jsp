@@ -28,8 +28,7 @@
         evolve without the loss of knowledge. Please remember the principals of Wing Chun and help to foster them through 
         the society and through this site, to keep an open and inclusive spirit of friendship and co-operation so that we may all 
         grow together. </p>
-        
-        <!-- Form validation here for t's and c's check box-->
+
 <p>confirm you have read the t's and c's <input type="checkbox" id="tAndCBox" name="tAndCBox" value="ON" /></p>
     </body>
 </html>

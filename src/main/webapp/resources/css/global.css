@@ -1,7 +1,5 @@
 .loginBox {
-    border: 1px solid black;
-    align-content: right;
-    margin-right: 25cm;
+    text-align: left;
 }
 
 body{

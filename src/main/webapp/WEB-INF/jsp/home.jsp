@@ -5,7 +5,9 @@
     <title>Home</title>
 </head>
 <body>
-    <h1>This is the home page</h1>
+    <h5>Welcome to the Wing Chun Wiki</h5>
+    <p>From here you can access the whole system</p>
+    <%@include file="navigator.jsp" %>
     <%@include file="logout.jsp" %>
 </body>
 </html>

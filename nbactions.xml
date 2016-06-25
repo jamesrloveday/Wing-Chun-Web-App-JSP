@@ -32,4 +32,16 @@
                 <skipTests>true</skipTests>
             </properties>
         </action>
+        <action>
+            <actionName>CUSTOM-full build and run without tests</actionName>
+            <displayName>full build and run without tests</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+                <goal>spring-boot:run</goal>
+            </goals>
+            <properties>
+                <skipTests>true</skipTests>
+            </properties>
+        </action>
     </actions>
