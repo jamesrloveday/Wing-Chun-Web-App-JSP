@@ -5,9 +5,11 @@
  */
 package com.application.web.jsp.controllers;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.client.RestTemplate;
 
 /**
  *
@@ -16,6 +18,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping("/wingchun")
 public class FormsController {
+    
+    @Value("${base.url}")
+    private String dbUrl;     
     
     @RequestMapping(value = "/forms/siuNimTao", 
             method = RequestMethod.GET)
