@@ -5,6 +5,11 @@
  */
 package com.application.web.jsp.controllers;
 
+import com.application.web.jsp.service.SiuNimTaoFormService;
+import com.application.web.jsp.transferObjects.Image;
+import java.io.IOException;
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,11 +25,18 @@ import org.springframework.web.client.RestTemplate;
 public class FormsController {
     
     @Value("${base.url}")
-    private String dbUrl;     
+    private String dbUrl;   
+    @Autowired
+    private SiuNimTaoFormService siuNimTaoFormService; 
     
     @RequestMapping(value = "/forms/siuNimTao", 
             method = RequestMethod.GET)
     public String getSiuNimTaoForm() {
+        try {
+        List<Image> siuNimTaoImages = siuNimTaoFormService.getAllImages(dbUrl);
+        } catch(IOException ioe) {
+            //TODO
+        }
         return "/siuNimTaoForm"; 
     }
     

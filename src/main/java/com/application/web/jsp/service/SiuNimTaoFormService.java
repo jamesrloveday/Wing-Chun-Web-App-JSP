@@ -6,6 +6,7 @@
 package com.application.web.jsp.service;
 
 import com.application.web.jsp.transferObjects.Image;
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -14,6 +15,12 @@ import java.util.List;
  */
 public interface SiuNimTaoFormService {
     
-    
-    public List<Image> getAllImages();
+    /**
+     * Gets all images for the Form
+     * 
+     * @param baseUrl
+     * @return a List of images
+     * @throws IOException 
+     */
+    public List<Image> getAllImages(String baseUrl) throws IOException;
 }
