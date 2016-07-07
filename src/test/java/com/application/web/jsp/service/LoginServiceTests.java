@@ -28,9 +28,8 @@ public class LoginServiceTests {
     @Autowired
     private MongoTemplate mongoTemplate;
 
-    @Mock
+    @Autowired
     private UserService userService;
-    @InjectMocks
     private LoginServiceImpl loginService;
 
     private User user;
@@ -38,7 +37,6 @@ public class LoginServiceTests {
 
     @Before
     public void setUp() {
-        MockitoAnnotations.initMocks(this);
         mongoTemplate.dropCollection(User.class);
         mongoTemplate.createCollection(User.class);
         loginService = new LoginServiceImpl(userService);
@@ -49,7 +47,7 @@ public class LoginServiceTests {
                 "testUsername",
                 "testPassword",
                 "test@test.com");
-        
+        userService.save(user); 
         invalidUser = new User("second", 
                  "second", 
                 "secondLocation", 
@@ -62,17 +60,14 @@ public class LoginServiceTests {
 
     @Test
     public void returnsTrueWhenLoggingInValidUser() {
-        given(userService.findUser(user.username, user.password)).willReturn(user);
-
         boolean loggedIn = loginService.loginUser(user);
-        assertTrue("Returned result not true", loggedIn);
+        assertTrue("Returned result not true, has the user been saved", loggedIn);
     }
 
     @Test
     public void returnsFalseWhenLoggingInInvalidUser() {
-
         boolean loggedIn = loginService.loginUser(invalidUser); 
-        assertFalse("Returned result not false", loggedIn); 
+        assertFalse("Returned result not false, A user should not have been saved", loggedIn); 
     }
 
 }

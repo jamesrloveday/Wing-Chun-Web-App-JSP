@@ -22,13 +22,11 @@ import org.springframework.web.client.RestTemplate;
 @Component("siuNimTaoFormService")
 public class SiuNimTaoFormServiceImpl implements SiuNimTaoFormService {
     
-    private static final String GET_ALL_IMAGES_FOR_SIUNIMTAO = "getAllImagesForForm?form=siu%20nim%20tao"; 
+    private static final String GET_ALL_IMAGES_FOR_SIUNIMTAO = "getAllImagesForForm?form=siu nim tao"; 
     private RestTemplate restTemplate; 
-    private ObjectMapper objectMapper; 
     
-    @Autowired
-    public SiuNimTaoFormServiceImpl(RestTemplate restTemplate) {
-        this.restTemplate = restTemplate; 
+    public SiuNimTaoFormServiceImpl() {
+        this.restTemplate = new RestTemplate(); 
     }
 
     @Override
