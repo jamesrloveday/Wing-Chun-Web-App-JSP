@@ -27,11 +27,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 public class SiuNimTaoFormServiceImplTest {
     
     @Value("${base.url}")
-    private String baseUrl; 
-    
-    
-    
-    
+    private String baseUrl;     
     private SiuNimTaoFormService siuNimTaoFormService; 
     
     @Before

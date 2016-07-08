@@ -12,6 +12,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.client.RestTemplate;
@@ -31,11 +32,12 @@ public class FormsController {
     
     @RequestMapping(value = "/forms/siuNimTao", 
             method = RequestMethod.GET)
-    public String getSiuNimTaoForm() {
+    public String getSiuNimTaoForm(Model model) {
         try {
         List<Image> siuNimTaoImages = siuNimTaoFormService.getAllImages(dbUrl);
+        model.addAttribute("siuNimTaoImages", siuNimTaoImages); 
         } catch(IOException ioe) {
-            //TODO
+            return "redirect:error"; 
         }
         return "/siuNimTaoForm"; 
     }
