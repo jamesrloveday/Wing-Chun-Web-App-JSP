@@ -5,6 +5,7 @@
  */
 package com.application.web.jsp.service.impl;
 
+import com.application.web.jsp.formatters.PathFormatter;
 import com.application.web.jsp.service.SiuNimTaoFormService;
 import com.application.web.jsp.transferObjects.Image;
 import com.fasterxml.jackson.core.type.TypeReference;
@@ -35,6 +36,7 @@ public class SiuNimTaoFormServiceImpl implements SiuNimTaoFormService {
         String imageListJson = restTemplate.getForObject(uri, String.class); 
         ObjectMapper mapper = new ObjectMapper(); 
         List<Image> imagesForSiuNimTao = mapper.readValue(imageListJson, new TypeReference<List<Image>>(){}); 
+        PathFormatter.formatImagePath(imagesForSiuNimTao); 
         return imagesForSiuNimTao; 
     }
     

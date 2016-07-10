@@ -10,22 +10,32 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" type="text/css" media="all" href="/resources/css/images.css"/>
         <title>Siu Nim Tao Form</title>
     </head>
     <body>
         <h1>Siu Nim Tao Form</h1>
+          <%@include file="navigator.jsp" %>
         <div id="siuNimTaoImages" class="imagesClass">
             <c:forEach items="${siuNimTaoImages}" var="image">
-                <ul>
-                    <li>${image.fileLocation}</li>
-                    <li>${image.title}</li>
-                    <li>${image.sectionName}</li>
-                    <li>${image.form}</li>
-                </ul>
-
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><img src="${image.fileLocation}" width="429" height="560" alt="basic stance"/></td>
+                        </tr>
+                        <tr>
+                            <td>${image.title}</td>
+                        </tr>
+                        <tr>
+                            <td>${image.sectionName}</td>
+                        </tr>
+                        <tr>
+                            <td>${image.form}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </c:forEach>
         </div>
-            <%@include file="navigator.jsp" %>
     <%@include file="logout.jsp" %>
     </body>
 </html>
