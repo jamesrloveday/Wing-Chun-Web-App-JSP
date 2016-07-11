@@ -24,13 +24,13 @@
                             <td><img src="${image.fileLocation}" width="429" height="560" alt="basic stance"/></td>
                         </tr>
                         <tr>
-                            <td>${image.title}</td>
+                            <td>Technique: ${image.title}</td>
                         </tr>
                         <tr>
-                            <td>${image.sectionName}</td>
+                            <td>Section: ${image.sectionName}</td>
                         </tr>
                         <tr>
-                            <td>${image.form}</td>
+                            <td>Form: ${image.form}</td>
                         </tr>
                     </tbody>
                 </table>
