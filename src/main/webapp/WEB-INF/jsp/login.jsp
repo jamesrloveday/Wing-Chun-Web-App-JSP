@@ -6,7 +6,7 @@
     <title>Log in</title>
 </head>
 <body>
-<h3>Please login to access the wiki</h3>
+<h3>Please login to access the wiki, Hello world</h3>
 
 <div class="loginBox" >
     <form id="loginForm" action="/wingchun/home" method="post">
