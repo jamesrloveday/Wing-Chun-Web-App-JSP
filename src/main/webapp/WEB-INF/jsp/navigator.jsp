@@ -22,6 +22,7 @@
                 <li><a href="/wingchun/forms/dummy">Dummy Form</a></li>
                 <li><a href="/wingchun/forms/history">Wing chun history</a></li>
                 <li><a href="/wingchun/forms/principals">Wing chun principals</a></li>
+                <li><a href="/wingchun/images/newImage">Upload an image</a></li>
             </ol>
 
         </div>
