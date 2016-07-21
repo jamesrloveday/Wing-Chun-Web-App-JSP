@@ -18,7 +18,10 @@
             <p>Title for the image: <input type="text" name="imageTitle" value="" size="50" /></p>
             <p>Form for the image: <input type="text" name="imageForm" value="" size="50" /></p>
             <p>Section for the image: <input type="text" name="imageSection" value="" size="50" /></p>
-                <imput type="submit" value="Upload"/>
+                <input type="submit" value="Upload" /> &nbsp; <input type="reset" value="Clear" />
+
+		<p>Note if you are unsure about posting an image speak to your instructor before uploading. 
+		You can also consult with the rules of use <a href="/wingchun/termsAndConditions" >here</a></p>
         </form>
     </body>
 </html>

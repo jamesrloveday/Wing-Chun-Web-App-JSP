@@ -24,6 +24,11 @@ public class ImageController {
         return "newImage";
     }
     
+    @RequestMapping(value = "/termsAndConditions", method = RequestMethod.GET) 
+    public String getTermsAndConditionsPage() {
+    	return "termsAndConditionsPage"; 
+    }
+    
     @RequestMapping(value = "/images/uploadImage", method = RequestMethod.POST)
     public String uploadNewFile(@RequestParam("file") MultipartFile file, @RequestParam("imageTitle") String title,
             @RequestParam("imageForm") String form, @RequestParam("imageSection") String section) {
