@@ -4,6 +4,7 @@
     Author     : James Loveday
 --%>
 
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -13,6 +14,9 @@
     </head>
     <body>
         <p>You can upload a new image using this page</p>
+    <c:if test="${not empty errorMessage}">
+        ${errorMessage}
+    </c:if>
         <form name="uploadImageForm" action="/images/uploadImage" method="POST" enctype="multipart/form-data">
             <p>File to upload: <input type="file" name="image" value="" /></p>
             <p>Title for the image: <input type="text" name="imageTitle" value="" size="50" /></p>
