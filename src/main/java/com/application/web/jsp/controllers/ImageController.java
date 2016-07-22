@@ -5,7 +5,13 @@
  */
 package com.application.web.jsp.controllers;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.Locale;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -31,11 +37,43 @@ public class ImageController {
     
     @RequestMapping(value = "/images/uploadImage", method = RequestMethod.POST)
     public String uploadNewFile(@RequestParam("file") MultipartFile file, @RequestParam("imageTitle") String title,
-            @RequestParam("imageForm") String form, @RequestParam("imageSection") String section) {
-        
+            @RequestParam("imageForm") String form, @RequestParam("imageSection") String section, Model model) {
+        String formImagePath = formImagePath(form.toLowerCase(Locale.ENGLISH)); 
+        if(!file.isEmpty()) {
+            try{
+               Files.copy(file.getInputStream(), 
+                       Paths.get("../webapp/resources/images" + File.pathSeparator + formImagePath + File.pathSeparator + file.getOriginalFilename())); 
+            }catch(Exception e) {
+                
+            }
+        }
         return null; 
     }
     
+    private String formImagePath(String form) {
+        String imagePath = ""; 
+        switch(form) {
+            case "siu nim tao": 
+                imagePath = "siuNimTao"; 
+                break;
+            case "chum kiu":
+                imagePath = "chumKiu";
+                break;
+            case "biu tze":
+                imagePath = "buTze"; 
+                break;
+            case "mook jong":
+                imagePath = "mookJong"; 
+                break;
+            case "bat dam":
+                imagePath = "batDam";
+                break;
+            case "poles":
+                imagePath = "poles";
+                break;
+        }
+        return imagePath; 
+    }
 }
 
     /**
